@@ -2,6 +2,14 @@
 ![RagBuilder logo](./assets/ragbuilder_light.png#gh-light-mode-only)
 
 # 
+
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![GitHub release](https://img.shields.io/github/release/KruxAI/ragbuilder.svg)](https://GitHub.com/KruxAI/ragbuilder/releases/)
+[![GitHub license](https://badgen.net/github/license/KruxAI/ragbuilder)](https://github.com/KruxAI/ragbuilder/blob/master/LICENSE)
+[![GitHub commits](https://badgen.net/github/commits/KruxAI/ragbuilder)](https://GitHub.com/KruxAI/ragbuilder/commit/)
+[![GitHub forks](https://img.shields.io/github/forks/KruxAI/ragbuilder.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/KruxAI/ragbuilder/network/)
+[![GitHub stars](https://img.shields.io/github/stars/KruxAI/ragbuilder.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/KruxAI/ragbuilder/stargazers/)
+
 RagBuilder is a toolkit that helps you create optimal Production-ready Retrieval-Augmented-Generation (RAG) setup for your data automatically. By performing hyperparameter tuning on various RAG parameters (Eg: chunking strategy: semantic, character etc., chunk size: 1000, 2000 etc.), RagBuilder evaluates these configurations against a test dataset to identify the best-performing setup for your data. Additionally, RagBuilder includes several state-of-the-art, pre-defined RAG templates that have shown strong performance across diverse datasets. So just bring your data, and RagBuilder will generate a production-grade RAG setup in just minutes.
 
 
@@ -118,7 +126,7 @@ docker run  -p 55003:8005  -e OPENAI_API_KEY=sk-....
 
 This will start the Ragbuilder Uvicorn app and open the browser. If the browser window doesn't open automatically, go to [http://localhost:55003/](http://localhost:55003/) in your browser to access the RagBuilder dashboard.
 
-*Note: If you are crearting your own synthetic dataset for evaluation, save the csv file in the same directory where the docker run command is being executed and provide the file name only*
+*Note: If you are creating your own synthetic dataset for evaluation, save the csv file in the same directory where the docker run command is being executed and provide the file name only*
 
 ## Quickstart Guide
 
@@ -139,7 +147,7 @@ To create a new project,
     - LLM: GPT-3.5 Turbo
 6. Select optimization approach:
     - __Bayesian optimization (Recommended):__ Bayesian optimization is a strategy for the optimization of objective functions that are expensive to evaluate. It is particularly useful in scenarios where the function to be optimized is unknown and expensive to compute, such as in hyperparameter tuning for machine learning models or optimizing engineering designs. This is perfect for RAG where we have multiple moving parts, each with multiple parameters
-    - __Run all Combinations:__ This option runs all possible combinations of the options selected, offering a comprehensive performance analysis of all RAG configurations for your dataset. This option is appropriate if you have selected fewer number of options. Orherwise, this option can be resource intensive as it may yield hundreds or even thousands of unique configurations to compare. *[Note]: This may take several minutes to complete.*
+    - __Run all Combinations:__ This option runs all possible combinations of the options selected, offering a comprehensive performance analysis of all RAG configurations for your dataset. This option is appropriate if you have selected fewer number of options. Otherwise, this option can be resource intensive as it may yield hundreds or even thousands of unique configurations to compare. *[Note]: This may take several minutes to complete.*
 8. Next, in Evaluation dataset options, you have the option to:
     - **Use Existing Synthetic Test Data:** If synthetic test data was previously generated for your dataset, this option will appear alongside the path of the existing test data.
     - **Generate Synthetic Test Data from My Dataset:** Create a new synthetic test dataset based on your existing data.
@@ -190,7 +198,7 @@ The environment variables are essential for authenticating and configuring vario
 
 ### Example `.env` File
 
-Create a file named `.env` in the directory where you will run the `ragbuilder` command and add the following content, replacing the placeholder values with your actual keys and connection string. Ensure not to use quoutes for keys or values
+Create a file named `.env` in the directory where you will run the `ragbuilder` command and add the following content, replacing the placeholder values with your actual keys and connection string. Ensure not to use quotes for keys or values
 
 ```env
 # Environment variables for the RagBuilder project
